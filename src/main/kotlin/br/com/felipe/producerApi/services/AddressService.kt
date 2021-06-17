@@ -11,7 +11,8 @@ class AddressService {
     @Autowired
     lateinit var viaCep: ViaCep
 
-    fun addressByCep (cep: String){
-        var addressTmp = viaCep.findAddressByCep(cep);
+    fun addressByCep (address: Address): String{
+        var addressTmp = viaCep.findAddressByCep(address.cep.toString());
+        return addressTmp;
     }
 }
