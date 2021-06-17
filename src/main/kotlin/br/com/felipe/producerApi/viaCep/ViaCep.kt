@@ -10,6 +10,6 @@ interface ViaCep {
 
     @GetMapping("/ws/{cep}/json", consumes = ["application/json"])
     @ResponseBody
-    fun findAddressByCep(@PathVariable("cep") cep:String): Map<String, Any>
+    fun findAddressByCep(@PathVariable("cep") cep:String): String
 
 }
