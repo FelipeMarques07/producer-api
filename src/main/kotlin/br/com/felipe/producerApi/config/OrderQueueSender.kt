@@ -14,15 +14,7 @@ class OrderQueueSender {
     @Autowired
     lateinit var queue: Queue
 
-    fun send(order : String){
-
-        if(order != "{\n" +
-                "  \"erro\": true\n" +
-                "}"){
+    fun send(order: Map<String, Any>){
             rabbitTemplate.convertAndSend("OrderQueue", order);
-        }else{
-
-            rabbitTemplate.convertAndSend("FailOrderQueue", order);
-        }
     }
 }

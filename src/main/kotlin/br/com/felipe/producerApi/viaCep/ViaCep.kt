@@ -1,5 +1,6 @@
 package br.com.felipe.producerApi.viaCep
 
+import br.com.felipe.producerApi.model.VO.AddressVO
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -10,6 +11,6 @@ interface ViaCep {
 
     @GetMapping("/ws/{cep}/json", consumes = ["application/json"])
     @ResponseBody
-    fun findAddressByCep(@PathVariable("cep") cep:String): String
+    fun findAddressByCep(@PathVariable("cep") cep:String): AddressVO
 
 }
